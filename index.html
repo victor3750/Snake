@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>貪吃蛇遊戲</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Klee+One:wght@400;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <p id="myScore"></p>
+    <p id="myScore2"></p>
+    <p id="text">
+        <span id="easy">10~15分：好弱</span>
+        <span id="medium">16~20分：普通人</span>
+        <span id="hard">21~25分：遊戲肥宅</span><br>
+        <span id="hell">還沒有人能超過25分</span>
+    </p>
+    <button type="button" id="Start" onclick="location.reload()">開始新遊戲</button>
+    <canvas id="myCanvas" width="620" height="420" style="background-color: black;"></canvas>
+    <p id="hint">（使用↑↓←→鍵控制蛇）</p>
+    <script src="./app.js"></script>
+</body>
+
+</html>

@@ -55,7 +55,7 @@ class Fruit {
         do {
             new_x = Math.floor(Math.random() * column) * unit;
             new_y = Math.floor(Math.random() * row) * unit;
-            //檢查有無重疊
+            //檢查有無重疊（吃到水果或是水果重生時座標正好與蛇重疊）
             checkOverlap(new_x, new_y);
         } while (overlapping)
 
@@ -163,7 +163,7 @@ function draw() {
 
     snake.unshift(newHead);
 
-    //若這邊才畫蛇，撞到時座標已經重疊但還是會畫出來，畫的順序從頭到尾，所以頭會被身體覆蓋看不見
+    //若這邊才畫蛇，撞到時座標已經重疊但還是會畫出來，畫的順序從頭到尾，所以撞到自己時頭會被身體覆蓋導致看不見頭
 
     //重新開啟keydown事件
     window.addEventListener("keydown", changeDirection);
@@ -218,7 +218,7 @@ function highlight() {
         document.getElementById("hard").classList.add("highlight");
     } else if (score == 26) {
         document.getElementById("hard").classList.toggle("highlight");
-        document.getElementById("hell").innerHTML = "你不是人";
+        document.getElementById("hell").innerHTML = "你太強了！";
         document.getElementById("hell").classList.add("highlight");
     }
 }
@@ -226,13 +226,13 @@ function highlight() {
 //隨積分改變結束訊息
 function gameOver() {
     if (score < 10) {
-        alert("看來你不適合這遊戲")
+        alert("還可以更好")
     } else if( score >=10 && score <=15 ) {
         alert("很遺憾，到此為止了")
     } else if( score >=16 && score <=20 ) {
         alert("做得很好")
     } else if( score >=21 && score <=25 ) {
-        alert("感謝肥宅的遊玩")
+        alert("感謝大神的遊玩")
     } else if( score >25 ) {
         alert("太驚人了！")
     }
